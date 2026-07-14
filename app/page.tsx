@@ -56,7 +56,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a href="#top" className="mark" aria-label="처음으로"><span>GW</span><b>BEAUTY COLLECTIVE</b></a>
-        <nav aria-label="주요 메뉴"><a href="#collective">Collective</a><a href="#brands">6 Brands</a><a href="#visit">Visit</a></nav>
+        <nav aria-label="주요 메뉴"><a href="#collective">About</a><a href="#brands">Brands</a><a href="#visit">Visit Us</a><a href="#contact">Contact</a></nav>
         <a className="nav-cta" href="#brands">Explore brands <span>↗</span></a>
       </header>
 
@@ -100,7 +100,7 @@ export default function Home() {
         <p className="visit-note">바이어와 파트너를 기다립니다.<br/>강원 뷰티의 다음 장을 공동관에서 직접 만나보세요.</p>
       </section>
 
-      <footer><div className="footer-brand"><span>GW</span><b>GANGWON<br/>BEAUTY COLLECTIVE</b></div><p>Presented by Gangwon State<br/>at K-BEAUTY EXPO KOREA 2026</p><a href="#top">BACK TO TOP ↑</a></footer>
+      <footer id="contact"><div className="footer-brand"><span>GW</span><b>GANGWON<br/>BEAUTY COLLECTIVE</b></div><p>Presented by Gangwon State<br/>at K-BEAUTY EXPO KOREA 2026</p><a href="#top">BACK TO TOP ↑</a></footer>
 
       {selected && (
         <div className="modal-backdrop" onMouseDown={(e) => e.currentTarget === e.target && setSelected(null)} role="presentation">
