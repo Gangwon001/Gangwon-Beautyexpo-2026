@@ -10,3 +10,17 @@
 .hero h1 span{display:block}
 .hero-copy{position:relative;right:auto;top:auto;margin:3.2vh 0 0 .4vw;font-size:clamp(16px,1.55vw,24px);font-weight:400;letter-spacing:-.025em;line-height:1.28}
 @media(max-width:800px){.hero h1{font-size:14.5vw;line-height:.94;margin-top:10vh}.hero-copy{left:auto;right:auto;top:auto;margin:4vh 0 0;font-size:15px;line-height:1.35}}
+
+/* Premium cosmetic-studio depth: emerald remains dominant. */
+.hero{
+  background:
+    radial-gradient(ellipse 56% 50% at 84% 13%, rgba(243,230,195,.13) 0%, rgba(243,230,195,.055) 24%, transparent 58%),
+    radial-gradient(ellipse 50% 58% at 76% 66%, rgba(216,245,229,.075) 0%, rgba(216,245,229,.025) 34%, transparent 66%),
+    radial-gradient(ellipse 78% 38% at 55% 108%, rgba(248,245,236,.085) 0%, rgba(243,230,195,.025) 42%, transparent 74%),
+    linear-gradient(135deg,#153a33 0%,#1d4b40 48%,#285448 78%,#304f46 100%);
+}
+.hero-glow{
+  background:
+    radial-gradient(ellipse 42% 36% at 88% 12%, rgba(248,245,236,.105), transparent 68%),
+    linear-gradient(102deg,rgba(4,38,32,.52) 0%,rgba(7,44,37,.17) 54%,rgba(243,230,195,.035) 100%);
+}
