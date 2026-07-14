@@ -63,8 +63,8 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-glow" />
         <div className="eyebrow"><span>GANGWON STATE PRESENTS</span><span>2026 · KINTEX</span></div>
-        <h1>BEAUTY,<br/><em>RISING</em><br/>FROM GANGWON.</h1>
-        <p className="hero-copy">강원에서 시작해 세계의 기준을 바꾸는<br/>떠오르는 뷰티기업 6개사를 만나보세요.</p>
+        <h1><span>BEAUTY</span><span><em>RISING</em> FROM</span><span>GANGWON</span></h1>
+        <p className="hero-copy">Premium Korean Beauty Brands<br/>from Gangwon State</p>
         <div className="event-ticket">
           <div><small>K-BEAUTY EXPO KOREA 2026</small><strong>15—17 OCT</strong></div>
           <div><small>LOCATION</small><strong>KINTEX Ⅰ · HALL 3—5</strong></div>
