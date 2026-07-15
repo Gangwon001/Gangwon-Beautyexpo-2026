@@ -55,32 +55,44 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a href="#top" className="mark" aria-label="처음으로"><span>GW</span><b>BEAUTY COLLECTIVE</b></a>
+        <a href="#top" className="mark" aria-label="강원특별자치도 공동관 홈">
+          <img src="/gangwon-state-logo.png" alt="강원특별자치도 · Gangwon State" width="720" height="195" />
+        </a>
         <nav aria-label="주요 메뉴"><a href="#collective">About</a><a href="#brands">Brands</a><a href="#visit">Visit Us</a><a href="#contact">Contact</a></nav>
         <a className="nav-cta" href="#brands">Explore brands <span>↗</span></a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-glow" />
-        <div className="eyebrow"><span>GANGWON STATE PRESENTS</span><span>2026 · KINTEX</span></div>
-        <h1><span>BEAUTY</span><span><em>RISING</em> FROM</span><span>GANGWON</span></h1>
-        <p className="hero-copy">Premium Korean Beauty Brands<br/>from Gangwon State</p>
-        <div className="event-ticket">
-          <div><small>K-BEAUTY EXPO KOREA 2026</small><strong>15—17 OCT</strong></div>
-          <div><small>LOCATION</small><strong>KINTEX Ⅰ · HALL 3—5</strong></div>
-          <a href="#brands" aria-label="브랜드 살펴보기">↓</a>
+        <picture className="hero-product-visual" aria-hidden="true">
+          <source media="(max-width: 800px)" srcSet="/hero/skincare-mobile.webp" />
+          <img src="/hero/skincare-desktop.webp" alt="" width="1536" height="1024" />
+        </picture>
+        <div className="hero-content">
+          <div className="eyebrow"><span>OFFICIAL GANGWON BEAUTY PAVILION</span><span>2026 · KINTEX</span></div>
+          <h1><span>Beauty, <em>Rising</em></span><span>from Gangwon</span></h1>
+          <p className="hero-copy">Meet six export-ready Korean beauty brands<br/>inspired by Gangwon’s nature and Korean innovation.</p>
+          <div className="hero-actions">
+            <a className="hero-action hero-action-primary" href="#brands">Explore 6 Brands <span aria-hidden="true">↗</span></a>
+            <a className="hero-action" href="#visit">Visit Us at KINTEX <span aria-hidden="true">↓</span></a>
+          </div>
         </div>
-        <div className="orb orb-one"/><div className="orb orb-two"/><div className="orb orb-three"/>
+        <div className="event-ticket">
+          <div><small>EVENT</small><strong>K-BEAUTY EXPO KOREA 2026</strong></div>
+          <div><small>DATE</small><strong>15–17 OCTOBER 2026</strong></div>
+          <div><small>LOCATION</small><strong>KINTEX · HALL 3–5</strong></div>
+          <a href="#visit">Plan Your Visit <span aria-hidden="true">↗</span></a>
+        </div>
       </section>
 
       <section className="manifesto" id="collective">
-        <p className="section-label">01 / THE COLLECTIVE</p>
+        <p className="section-label">01 / ABOUT</p>
         <h2>One province.<br/>Six new perspectives<br/>on <i>beauty.</i></h2>
         <div className="manifesto-side"><span className="vertical">GANGWON STATE · K-BEAUTY</span><p>클린 뷰티에서 바이오 기술, 프로페셔널 케어와 뷰티 디바이스까지. 서로 다른 전문성이 하나의 강원 뷰티 공동관에서 연결됩니다.</p></div>
       </section>
 
       <section className="brands-section" id="brands">
-        <div className="section-head"><div><p className="section-label">02 / MEET THE SIX</p><h2>Six brands.<br/>Distinct brilliance.</h2></div><p>브랜드를 선택해 핵심 기술과 제품을 확인하세요.<br/><span>Select a brand to discover more.</span></p></div>
+        <div className="section-head"><div><p className="section-label">02 / BRANDS</p><h2>Six brands.<br/>Distinct brilliance.</h2></div><p>브랜드를 선택해 핵심 기술과 제품을 확인하세요.<br/><span>Select a brand to discover more.</span></p></div>
         <div className="brand-grid">
           {brands.map((brand, index) => (
             <button className="brand-card" key={brand.id} onClick={() => setSelected(brand)} aria-label={`${brand.name} 자세히 보기`}>
@@ -100,13 +112,13 @@ export default function Home() {
         <p className="visit-note">바이어와 파트너를 기다립니다.<br/>강원 뷰티의 다음 장을 공동관에서 직접 만나보세요.</p>
       </section>
 
-      <footer id="contact"><div className="footer-brand"><span>GW</span><b>GANGWON<br/>BEAUTY COLLECTIVE</b></div><p>Presented by Gangwon State<br/>at K-BEAUTY EXPO KOREA 2026</p><a href="#top">BACK TO TOP ↑</a></footer>
+      <footer id="contact"><a className="footer-brand" href="#top" aria-label="강원특별자치도 공동관 홈"><img src="/gangwon-state-logo.png" alt="강원특별자치도 · Gangwon State" width="720" height="195" /></a><p>Presented by Gangwon State<br/>at K-BEAUTY EXPO KOREA 2026</p><a href="#top">BACK TO TOP ↑</a></footer>
 
       {selected && (
         <div className="modal-backdrop" onMouseDown={(e) => e.currentTarget === e.target && setSelected(null)} role="presentation">
           <section className="modal" role="dialog" aria-modal="true" aria-labelledby="brand-title">
             <button className="close" onClick={() => setSelected(null)} aria-label="닫기">×</button>
-            <div className="modal-image"><img src={selected.image} alt=""/><span>{selected.category}</span></div>
+            <div className={`modal-image modal-image-${selected.id}`}><img src={selected.image} alt=""/><span>{selected.category}</span></div>
             <div className="modal-copy"><p className="section-label">GW BEAUTY / {selected.company}</p><h2 id="brand-title">{selected.name}</h2><h3>{selected.tagline}</h3><p>{selected.copy}</p><div className="chips">{selected.keywords.map(k => <span key={k}>{k}</span>)}</div><div className="modal-actions"><a href={selected.site} target="_blank" rel="noreferrer">Official website ↗</a><a href={selected.catalog} target="_blank">View catalog ↓</a></div></div>
           </section>
         </div>
